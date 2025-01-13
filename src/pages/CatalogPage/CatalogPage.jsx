@@ -1,9 +1,19 @@
-import css from './CatalogPage.module.css'
+import { useEffect } from "react";
+import css from "./CatalogPage.module.css";
+import { useDispatch } from "react-redux";
+import { fetchAllTrucks } from "../../components/redux/trucks/operations";
+import CatalogList from "../../components/CatalogList/CatalogList";
 
 const CatalogPage = () => {
-  return (
-    <div className={css.catalog}>CatalogPage</div>
-  )
-}
+  const dispatch = useDispatch();
 
-export default CatalogPage
+  useEffect(() => {
+    dispatch(fetchAllTrucks());
+  }, [dispatch]);
+
+  return <div className={css.catalog}>
+    <CatalogList />
+  </div>;
+};
+
+export default CatalogPage;
