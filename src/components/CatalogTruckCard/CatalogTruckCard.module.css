@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  gap: 24px;
+}
+
+.imgContainer {
+  width: 292px;
+  height: 320px;
+}
+
+.img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: 600;
+font-size: 24px;
+line-height: 1.33333;
+color: #101828;
+}
+
+.cost {
+  width: 524px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
