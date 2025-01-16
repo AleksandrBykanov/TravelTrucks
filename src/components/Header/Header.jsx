@@ -10,17 +10,23 @@ const activeClass = ({ isActive }) => {
 const Header = () => {
   return (
     <header className={css.header}>
-      <nav className={css.nav}>
-        <Logo />
-        <ul className={css.list}>
-          <li>
-            <NavLink className={activeClass} to='/'>Home</NavLink>
-          </li>
-          <li>
-            <NavLink className={activeClass} to='/catalog' end>Catalog</NavLink>
-          </li>
-        </ul>
-      </nav>
+      <div className={css.container}>
+        <nav className={css.nav}>
+          <Logo />
+          <ul className={css.list}>
+            <li>
+              <NavLink className={activeClass} to="/">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className={activeClass} to="/catalog" end>
+                Catalog
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

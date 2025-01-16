@@ -3,6 +3,7 @@ import css from "./CatalogPage.module.css";
 import { useDispatch } from "react-redux";
 import { fetchAllTrucks } from "../../components/redux/trucks/operations";
 import CatalogList from "../../components/CatalogList/CatalogList";
+import Filters from "../../components/Filters/Filters";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -12,9 +13,12 @@ const CatalogPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={css.catalog}>
-      <CatalogList />
-    </div>
+    <section className={css.catalog}>
+      <div className={css.container}>
+        <Filters />
+        <CatalogList />
+      </div>
+    </section>
   );
 };
 
