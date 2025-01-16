@@ -11,9 +11,11 @@ const CatalogPage = () => {
     dispatch(fetchAllTrucks());
   }, [dispatch]);
 
-  return <div className={css.catalog}>
-    <CatalogList />
-  </div>;
+  return (
+    <div className={css.catalog}>
+      <CatalogList />
+    </div>
+  );
 };
 
 export default CatalogPage;
