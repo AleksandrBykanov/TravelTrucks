@@ -9,7 +9,7 @@ const trucksSlice = createSlice({
     error: false,
   },
   reducers: {
-    acivateLoader(state, action) {
+    activateLoader(state, action) {
       state.loading = action.payload;
     },
   },
@@ -29,7 +29,7 @@ const trucksSlice = createSlice({
       }),
 });
 
-export const { acivateLoader } = trucksSlice.actions;
+export const { activateLoader } = trucksSlice.actions;
 
 const allTrucksReducer = trucksSlice.reducer;
 

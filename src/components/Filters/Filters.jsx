@@ -1,10 +1,14 @@
 import { Form, Formik } from "formik";
 import css from "./Filters.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "../redux/trucks/selectors";
 import VehicleEquipment from "../VehicleEquipment/VehicleEquipment";
 import VehicleType from "../VihicleType/VehicleType";
-import Location from "../Location/Location.jsx";
+import Location from "../Location/Location";
+import { activateLoader } from '../redux/trucks/slice';
+import { addFilters } from '../redux/filters/slice';
+import { changeValue } from '../redux/pagination/slice';
+
 
 const getUniqueValues = (items, key) => [
   ...new Set(items.map(item => item[key])),
@@ -28,8 +32,20 @@ const Filters = () => {
     bathroom: false,
   };
 
+  const dispatch = useDispatch();
+  const handleFilterSubmit = (values, actions) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    dispatch(activateLoader(true));
+    setTimeout(() => {
+      dispatch(addFilters(values));
+      dispatch(changeValue(4));
+      actions.resetForm();
+      dispatch(activateLoader(false));
+    }, 500);
+  };
+
   return (
-    <Formik initialValues={initialValues}>
+    <Formik initialValues={initialValues} onSubmit={handleFilterSubmit}>
       <Form>
         <Location />
         <VehicleEquipment />

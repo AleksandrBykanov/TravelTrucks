@@ -1,7 +1,6 @@
 import { Field } from "formik";
 import { CiMap } from "react-icons/ci";
 import { useId } from "react";
-
 import css from "./Location.module.css";
 
 const Location = () => {
