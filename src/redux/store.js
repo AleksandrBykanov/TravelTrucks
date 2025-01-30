@@ -1,6 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import allTrucksReducer from "./trucks/slice";
-import favoriteReducer from "./favorites/slice";
 import {
   persistStore,
   persistReducer,
@@ -12,6 +10,11 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import filterReducer from "./filters/slice";
+import paginationReducer from "./pagination/slice";
+import truckReducer from "./truck/slice";
+import favoriteReducer from "./favorites/slice";
+import allTrucksReducer from "./trucks/slice";
 
 const favoritePersistConfig = {
   key: 'favoriteTrucks',
@@ -27,7 +30,10 @@ const persistFavoriteReducer = persistReducer(
 export const store = configureStore({
   reducer: {
     allTrucks: allTrucksReducer,
+    truck: truckReducer,
     favorite: persistFavoriteReducer,
+    filter: filterReducer,
+    pagination: paginationReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

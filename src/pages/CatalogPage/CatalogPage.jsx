@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import css from "./CatalogPage.module.css";
 import { useDispatch } from "react-redux";
-import { fetchAllTrucks } from "../../components/redux/trucks/operations";
+import { fetchAllTrucks } from "../../redux/trucks/operations";
 import CatalogList from "../../components/CatalogList/CatalogList";
 import Filters from "../../components/Filters/Filters";
 

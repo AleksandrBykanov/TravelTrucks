@@ -1,6 +1,6 @@
 import css from "./CatalogList.module.css";
 import { useSelector } from "react-redux";
-import { selectItems } from "../redux/trucks/selectors";
+import { selectItems } from "../../redux/trucks/selectors";
 import CatalogTruckCard from "../CatalogTruckCard/CatalogTruckCard";
 
 const CatalogList = () => {

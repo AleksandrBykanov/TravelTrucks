@@ -1,13 +1,13 @@
 import { Form, Formik } from "formik";
 import css from "./Filters.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectItems } from "../redux/trucks/selectors";
+import { selectItems } from "../../redux/trucks/selectors";
 import VehicleEquipment from "../VehicleEquipment/VehicleEquipment";
 import VehicleType from "../VihicleType/VehicleType";
 import Location from "../Location/Location";
-import { activateLoader } from '../redux/trucks/slice';
-import { addFilters } from '../redux/filters/slice';
-import { changeValue } from '../redux/pagination/slice';
+import { activateLoader } from '../../redux/trucks/slice';
+import { addFilters } from '../../redux/filters/slice';
+import { changeValue } from '../../redux/pagination/slice';
 
 
 const getUniqueValues = (items, key) => [
