@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import Loader from "./components/Loader/Loader.jsx";
 import { Suspense, lazy } from "react";
+import Features from "./components/Features/Features.jsx";
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
 const DetailsTruckPage = lazy(() =>
@@ -17,7 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/catalog/:truckId" element={<DetailsTruckPage />} />          
+          <Route path="/catalog/:truckId" element={<DetailsTruckPage />}>
+            <Route index element={<Features />} />
+          </Route>
         </Routes>
       </Suspense>
     </>
