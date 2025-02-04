@@ -15,7 +15,7 @@
   border-radius: 20px;
   padding: 24px;
   width: 888px;
-  background-color: var(--white);
+  background-color: #ffffff;
   display: flex;
   gap: 24px;
 }

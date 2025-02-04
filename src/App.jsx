@@ -1,10 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import HomePage from "./pages/HomePage/HomePage.jsx";
 import Header from "./components/Header/Header.jsx";
-import CatalogPage from "./pages/CatalogPage/CatalogPage.jsx";
 import Loader from "./components/Loader/Loader.jsx";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
+const DetailsTruckPage = lazy(() =>
+  import("./pages/DetailsPage/DetailsPage.jsx")
+);
 
 function App() {
   return (
@@ -14,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/catalog/:truckId" element={<DetailsTruckPage />} />          
         </Routes>
       </Suspense>
     </>
