@@ -3,12 +3,11 @@ import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import Loader from "./components/Loader/Loader.jsx";
 import { Suspense, lazy } from "react";
-import Features from "./components/Features/Features.jsx";
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
-const DetailsTruckPage = lazy(() =>
-  import("./pages/DetailsPage/DetailsPage.jsx")
-);
+const DetailsTruckPage = lazy(() => import("./pages/DetailsPage/DetailsPage.jsx"));
+const Features = lazy(() => import('./components/Features/Features'));
+const Reviews = lazy(() => import('./components/Reviews/Reviews'));
 
 function App() {
   return (
@@ -20,6 +19,8 @@ function App() {
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/catalog/:truckId" element={<DetailsTruckPage />}>
             <Route index element={<Features />} />
+            <Route path="features" element={<Features />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
         </Routes>
       </Suspense>
