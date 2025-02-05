@@ -8,6 +8,7 @@ const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage"));
 const DetailsTruckPage = lazy(() => import("./pages/DetailsPage/DetailsPage.jsx"));
 const Features = lazy(() => import('./components/Features/Features'));
 const Reviews = lazy(() => import('./components/Reviews/Reviews'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="features" element={<Features />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </>
